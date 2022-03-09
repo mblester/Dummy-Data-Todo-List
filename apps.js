@@ -27,13 +27,15 @@
         console.log(arrayOfTodos)
     }
     
-    let ol = document.getElementById('todo-list')
     const populateTodos = () => {
-    const ol = document.getElementById('todo-list');
+        let ol = document.getElementById('todo-list')
+        for (let index=0; index < arrayOfTodos.length; index++){
+            const title= arrayOfTodos[index].title;
+            let li = document.createElement('li');
+            var text = document.createTextNode(title);
+            li.appendChild(text);
+            ol.appendChild(li);
+        }
+    
 
-    let li = document.createElement('li');
-    var text = document.createTextNode(title);
-
-        li.append(text);
-        ol.append(li);
     }
